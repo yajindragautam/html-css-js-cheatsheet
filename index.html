@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+    <title>Flex Box In CSS</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="main-nav">
+                <h2>Flex Box In CSS</h2>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content-container">
+            <p>CSS Flexible Box Layout is a module of CSS that defines a CSS box model optimized for user interface
+                design, and the layout of items in one dimension. In the flex layout model, the children of a flex
+                container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused
+                space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the
+                children can be easily manipulated.</p>
+
+            <div class="content-card">
+                <h4>Properties for the Parent
+                    (flex container)
+                </h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg" alt="Flex Property">
+                <p>This defines a flex container; inline or block depending on the given value. It enables a flex
+                    context for all its direct children.</p>
+                <div class="code-container">
+                    <pre><code class="language-css">.container {
+     display: flex; /* or inline-flex */
+ } </code>
+                    </pre>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="content-card">
+                <h4>Flex-direction</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" alt="Flex Direction">
+                <p>This establishes the main-axis, thus defining the direction flex items are placed in the flex
+                    container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of
+                    flex items as primarily laying out either in horizontal rows or vertical columns.</p>
+                <ul>
+                    <li>row (default): left to right in <code>ltr;</code> ltr; right to left in rtl</li>
+                    <li>row-reverse: right to left in ltr; left to right in rtl</li>
+                    <li>column: same as row but top to bottom</li>
+                    <li>column-reverse: same as row-reverse but bottom to top</li>
+                </ul>
+                <div class="code-container">
+                    <pre><code class="language-css">.container {
+flex-direction: row | row-reverse | column | column-reverse;
+}</code>
+</pre>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="content-card">
+                <h4>Flex-wrap</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg" alt="Flex Wrap">
+                <p>By default, flex items will all try to fit onto one line. You can change that and allow the items to
+                    wrap as needed with this property.</p>
+                <ul>
+                    <li> <samp>nowrap</samp> (default): all flex items will be on one line</li>
+                    <li> <samp>wrap</samp> : flex items will wrap onto multiple lines, from top to bottom.</li>
+                    <li> <samp>wrap-reverse</samp> : flex items will wrap onto multiple lines from bottom to top.</li>
+                    <li>There are some visual demo of <a href="https://css-tricks.com/almanac/properties/f/flex-wrap/">
+                            <code>flex-direction</code> </a> </li>
+                </ul>
+
+                <div class="code-container">
+                    <pre><code class="language-css">.container {flex-wrap: nowrap | wrap | wrap-reverse;}</code>
+                    </pre>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="content-card">
+                <h4>Flex-grow</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg" alt="Flex Growth">
+                <p>This defines the ability for a flex item to grow if necessary. It accepts a unitless value that
+                    serves as a proportion. It dictates what amount of the available space inside the flex container the
+                    item should take up.
+                    <br>
+                    If all items have flex-grow set to 1, the remaining space in the container will be distributed
+                    equally to all children. If one of the children has a value of 2, the remaining space would take up
+                    twice as much space as the others (or it will try to, at least).
+                </p>
+                <div class="code-container">
+                    <pre><code class="language-css">.item {flex-grow: 4; /* default 0 */}</code>
+                    </pre>
+                </div>
+
+            </div>
+            <hr>
+
+            <div class="content-card">
+                <h4>Flex-shrink</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" alt="Flex Direction">
+                <p>This defines the ability for a flex item to shrink if necessary.</p>
+                <div class="code-container">
+                    <pre><code class="language-css">.item {flex-shrink: 3; /* default 1 */}</code>
+                    </pre>
+                </div>
+
+            </div>
+
+            <div class="content-card">
+                <h4>Align-self</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg" alt="Flex Direction">
+                <p>This allows the default alignment (or the one specified by align-items) to be overridden for
+                    individual flex items. Please see the align-items explanation to understand the available values.
+                </p>
+                <div class="code-container">
+                    <pre><code class="language-css">.item {align-self: auto | flex-start | flex-end | center | baseline |       stretch;}</code>
+                    </pre>
+                </div>
+                <ul>
+                    <li> <strong>Note</strong> that float, clear and vertical-align have no effect on a flex item.</li>
+                </ul>
+
+            </div>
+
+            <hr>
+
+            <div class="content-card">
+                <h4>justify-content</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" alt="Justify Content">
+                <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when
+                    either all the flex items on a line are inflexible, or are flexible but have reached their maximum
+                    size. It also exerts some control over the alignment of items when they overflow the line.</p>
+                <div class="code-container">
+                    <pre><code class="language-css">.container {
+justify-content: flex-start | flex-end | center | space-between | space-around || start | end | left | right ... + safe | unsafe;}</code>
+</pre>
+                </div>
+                <ul>
+                    <li> <code>flex-start (default)</code> : items are packed toward the start of the flex-direction.
+                    </li>
+                    <li> <code>flex-end</code> : items are packed toward the end of the flex-direction.</li>
+                    <li> <code>start</code>: items are packed toward the start of the writing-mode direction.</li>
+                    <li> <code>end</code> : items are packed toward the end of the writing-mode direction.</li>
+                    <li> <code>left</code>: items are packed toward left edge of the container, unless that doesn’t make
+                        sense with the flex-direction, then it behaves like start.</li>
+                    <li> <code>right</code> : items are packed toward right edge of the container, unless that doesn’t
+                        make sense with the flex-direction, then it behaves like end.</li>
+                    <li> <code>center</code> : items are centered along the line</li>
+                    <li> <code>space-between</code> : items are evenly distributed in the line; first item is on the
+                        start line, last item on the end line</li>
+                    <li> <code>space-around</code> : items are evenly distributed in the line with equal space around
+                        them. Note that visually the spaces aren’t equal, since all the items have equal space on both
+                        sides. The first item will have one unit of space against the container edge, but two units of
+                        space between the next item because that next item has its own spacing that applies.</li>
+                    <li> <code>space-evenly</code> : items are distributed so that the spacing between any two items
+                        (and the space to the edges) is equal.</li>
+                </ul>
+                <p> <strong>Note </strong> that that browser support for these values is nuanced. For example,
+                    space-between never got support from some versions of Edge, and start/end/left/right aren’t in
+                    Chrome yet. MDN has detailed charts. The safest values are flex-start, flex-end, and center.</p>
+
+            </div>
+
+            <hr>
+
+            <div class="content-card">
+                <h4>align-items</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" alt="align items">
+                <p>This defines the default behavior for how flex items are laid out along the
+                    <strong>cross axis</strong> on the current line. Think of it as the justify-content version for the
+                    cross-axis (perpendicular to the main-axis).
+                </p>
+                <div class="code-container">
+                    <pre><code class="language-css">.container {
+                        align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+                      }</code>
+                    </pre>
+                </div>
+                <ul>
+                    <li> <code>stretch (default)</code>: stretch to fill the container (still respect
+                        min-width/max-width)</li>
+                    <li> <code>flex-start / start / self-start</code>: items are placed at the start of the cross axis.
+                        The difference between these is subtle, and is about respecting the flex-direction rules or the
+                        writing-mode rules.</li>
+                    <li> <code>flex-end / end / self-end</code> : items are placed at the end of the cross axis. The
+                        difference again is subtle and is about respecting flex-direction rules vs. writing-mode rules.
+                    </li>
+                    <li> <code>center</code>: items are centered in the cross-axis</li>
+                    <li> <code>baseline</code> : items are aligned such as their baselines align</li>
+                </ul>
+
+            </div>
+
+            <hr>
+
+            <div class="content-card">
+                <h4>align-content</h4>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg" alt="align content">
+                <p>This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to
+                    how <code>justify-content</code> aligns individual items within the main-axis.</p>
+                <div class="code-container">
+                    <pre><code class="language-css">.container {
+                        align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+                      }</code>
+                    </pre>
+                </div>
+                <ul>
+                    <li> <code>normal (default)</code>: items are packed in their default position as if no value was
+                        set.</li>
+                    <li> <code>flex-start / start</code> : items packed to the start of the container. The (more
+                        supported) flex-start honors the flex-direction while start honors the writing-mode direction.
+                    </li>
+                    <li> <code>flex-end / end</code> : items packed to the end of the container. The (more support)
+                        flex-end honors the flex-direction while end honors the writing-mode direction.</li>
+                    <li> <code>center</code> : items centered in the container</li>
+                    <li> <code>space-between</code> : items evenly distributed; the first line is at the start of the
+                        container while the last one is at the end</li>
+                    <li> <code>space-around</code> : items evenly distributed with equal space around each line</li>
+                    <li> <code>space-evenly</code> : items are evenly distributed with equal space around them</li>
+                    <li> <code>stretch</code> : lines stretch to take up the remaining space </li>
+                </ul>
+
+            </div>
+
+
+
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-menus">
+                <div class="footer-about-container">
+                    <p> <strong>CODE WITH YAJI</strong> is an initiative to help the upcoming programmers with the code.
+                        WE focuses on providing the most efficient code or snippets as the code wants to be simple. We
+                        will help programmers build up concepts in different programming languages that include Java,
+                        HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+                </div>
+                <div class="cate-container">
+                    <ul>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>React Js</li>
+                        <li>Wordpress</li>
+                    </ul>
+                </div>
+                <div class="ft-imp-link">
+                    <ul>
+                        <li>Home</li>
+                        <li>Contact Us</li>
+                        <li>Contribute</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-media-menu">
+                <p>Follow Us In Social Media</p> <br>
+
+                <a href="https://www.facebook.com/yajindra/" target="_balank">
+                    <span><i class="fab fa-facebook"></i></span>
+                </a>
+                <a href="https://www.linkedin.com/in/yajindra-gtm/" target="_balank">
+                    <span><i class="fab fa-linkedin"></i></span>
+                </a>
+                <a href="#" target="_balank"></a><span><i class="fab fa-youtube"></i></span> </a>
+                <a href="https://www.instagram.com/codewithyaji/" target="_balank"></a>
+                    <span><i class="fab fa-instagram"></i></span>
+                </a>
+
+            </div>
+
+            <div class="copy-right-container">
+                <div class="copy-right">
+                    <p>Copyright @2021: All Reserved By Yajindra Gautam</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://kit.fontawesome.com/65fc008905.js" crossorigin="anonymous"></script>
+<script src="prism.js"></script>
+
+</html>

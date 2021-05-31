@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yusei Magic", sans-serif;
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: whitesmoke;
+  padding: 5px;
+}
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+  height: 100%;
+  background-color: aquamarine;
+  color: black;
+  padding: 5px 5px 5px 20px;
+}
+@media only screen and(max-width: 600px) {
+  .main-content-container {
+    display: inline-block;
+    width: 100% !important;
+  }
+}
+.code-container {
+  display: inline-block;
+  width: 95%;
+  height: fit-content;
+}
+.content-card {
+  margin: 10px 0;
+}
+.content-card:hover {
+  /* box-shadow: 4px  4px  3px #d6d0d0;
+    border-radius: 4px; */
+  transform: rotateX(7deg);
+}
+.content-card h4 {
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 2px 2px 2px whitesmoke;
+  text-transform: capitalize;
+}
+.content-card code {
+  background-color: burlywood;
+}
+.content-card ul {
+  list-style-position: inside;
+  list-style-type: circle;
+}
+.toolbar-item {
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.toolbar-item:focus {
+  border-radius: 2px #7fffd4;
+}
+.toolbar button {
+  cursor: pointer;
+}
+
+/* ********* ********************************
+********* ***************FOOTER SECTION STARTS HERE  ********* ********************************
+********* ********************************
+*/
+.footer-container {
+  background-color: black;
+  color: aliceblue;
+}
+
+.footer-menus {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 10px 20px 10px;
+}
+.footer-about-container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  max-width: 60vw;
+}
+@media only screen and (max-width: 600px) {
+  .footer-menus:first-child {
+    display: inline-block !important;
+    width: auto;
+    max-width: none;
+
+  }
+}
+.social-media-menu{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(76, 250, 76);
+    height: auto;
+    margin:0 10px; 
+}
+.social-media-menu p{
+    display: inline-block;
+    font-size: large;
+    margin: 10px 10px 5px 0;
+    
+}
+.social-media-menu span{
+    display: block;
+}
+.social-media-menu span{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(158, 75, 236);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+}
+.social-media-menu span:hover{
+    background-color: rgb(152, 59, 240);
+    transform: rotate(10deg);
+    cursor: pointer;
+}
+.social-media-menu span .fab{
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em;
+    align-items: center;
+}
+.social-media-menu span i{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.copy-right-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
